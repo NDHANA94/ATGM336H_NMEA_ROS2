@@ -73,7 +73,7 @@ class GPS(Node):
                 gpgga.undulation = float(data[10]) if data[10] != '' else np.nan
                 gpgga.undulation_units = data[11]
                 if not data[12] == '': gpgga.diff_age = int(data[12])
-                # if not data[13] == '': gpgga.station_id = data[13]
+                gpgga.station_id = data[13]
                 self.gpgga_pub.publish(gpgga)
 
         if self.gpgsa_pub.get_subscription_count() > 0:
@@ -92,7 +92,7 @@ class GPS(Node):
                 gpgsa.sv_ids = sv_ids
                 gpgsa.pdop = float(data[14]) if data[14] != '' else np.nan
                 gpgsa.hdop = float(data[15]) if data[15] != '' else np.nan
-                gpgsa.vdop = float(data[16].split('*')[0]) if data[16] != '' else np.nan
+                gpgsa.vdop = float(data[16]) if data[16] != '' else np.nan
                 self.gpgsa_pub.publish(gpgsa)
 
         if self.gpgsv_pub.get_subscription_count() > 0:
