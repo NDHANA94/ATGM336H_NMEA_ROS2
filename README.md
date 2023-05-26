@@ -1,7 +1,7 @@
 # ATGM336H_NMEA_ROS2
 ROS2 pkg for ATGM336H GPS Module
 
-This pkg contains gps_node which publishes folloing NMEA protocol topics;
+This pkg contains gps_node which publishes following NMEA protocol topics;
 - `/gps/gpgga`: Message from GNGGA String
     | data type |     Data    | Description |
     | --- | --- | --- |
