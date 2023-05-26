@@ -16,32 +16,28 @@ import argparse
 import numpy as np
 from  std_msgs.msg import Int8MultiArray
 
-data_atgm = {"GPGSA": None, "GPGSV": None, "GPTXT": None,
-             "GNGLL": None, "GNGGA": None, "GNRMC": None, "GNVTG": None, "GNZDA": None,
-             "BDGSA": None, "BDGSV": None, 
-             }
 
 """
-$GPGSA:
+$GPGSA: GPS DOP and Active Satellites
 
-$GPGSV:
+$GPGSV: GPS Satellites in View
 
-$GPTXT:
+$GPTXT: General Purpose Text Transmission
 
 $GNGLL: Geographic Position - Latitude/Longitude
      | $GNGLL | lat | lat dir | lon | lon gir | utc | data status | mode ind | *xx | [CR][LF] |
 
-$GNGGA:
+$GNGGA: Global Navigation Satellite System Fix Data
 
-$GNRMC: 
+$GNRMC: Recommended Minimum Specific GPS/Transit Data
 
-$GNVTG:
+$GNVTG: Course Over Ground and Ground Speed
 
-$GNZDA:
+$GNZDA: Time and Date
 
-$BDGSA:
+$BDGSA: Beidou DOP and Active Satellites
 
-$BDGSV:
+$BDGSV: Beidou Satellites in View
 
 """
 
