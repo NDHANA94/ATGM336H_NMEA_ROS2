@@ -7,8 +7,6 @@
 from atgm336h5n3x.atgm336h_serial import ATGM336H_Serial
 from rclpy.node import Node
 import rclpy
-from gps_msgs.msg import GPSFix
-from gps_msgs.msg import GPSStatus
 from nmea_msgs.msg import Gpgga, Gpgsa, Gpgsv, GpgsvSatellite, Gprmc, Sentence
 import serial
 from time import time
