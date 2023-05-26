@@ -66,7 +66,7 @@ This pkg contains gps_node which publishes folloing NMEA protocol topics;
 
 
 ### Install:
-    ``` 
+    
     sudo apt-get install ros-$ROS_DISTRO-nmea_msgs
 
     mkdir -p ~/ros2_ws/src
@@ -74,11 +74,11 @@ This pkg contains gps_node which publishes folloing NMEA protocol topics;
     git clone https://github.com/NDHANA94/ATGM336H_NMEA_ROS2.git
     cd ~/ros2_ws
     colcon build
-    ```
+    
 
 ### Execute:
-    ```
+    
     cd ~/ros2_ws
     source install/setup.bash
     ros2 run atgm336h5n3x nmea_node --dev /dev/ttyUSB0
-    ```
+    
