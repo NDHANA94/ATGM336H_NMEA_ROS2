@@ -43,20 +43,26 @@ class ATGM336H_Serial():
         data = None
         while (time() - t_start) < timeout:
             if not raw_data:
-                line = self.ser.readline().decode('ascii')[:-2].split(',')
-                if line[0] == msg_type:
-                    data = line[1:]
-                    last = data[-1]
-                    data.remove(last)
-                    data.append(last.split('*')[0])
-                    found = True
-                    break
+                try:
+                    line = self.ser.readline().decode('ascii')[:-2].split(',')
+                    if line[0] == msg_type:
+                        data = line[1:]
+                        last = data[-1]
+                        data.remove(last)
+                        data.append(last.split('*')[0])
+                        found = True
+                        break
+                except:
+                    pass
             else:
-                line = self.ser.readline().decode('ascii')
-                if line[:6] == msg_type:
-                    data = line
-                    found = True
-                    break
+                try:
+                    line = self.ser.readline().decode('ascii')
+                    if line[:6] == msg_type:
+                        data = line
+                        found = True
+                        break
+                except:
+                    pass
         if found:
             return data
         else:

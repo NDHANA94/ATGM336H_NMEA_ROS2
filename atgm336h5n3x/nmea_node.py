@@ -167,8 +167,11 @@ class GPS(Node):
             sentence = Sentence()
             sentence.header.stamp = self.get_clock().now().to_msg()
             sentence.header.frame_id = 'gps'
-            sentence.sentence = self.atgm.ser.readline().decode('ascii')
-            self.sentence_pub.publish(sentence)
+            try:
+                sentence.sentence = self.atgm.ser.readline().decode('ascii')
+                self.sentence_pub.publish(sentence)
+            except:
+                pass
 
 
 def main(args=None):
