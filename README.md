@@ -64,8 +64,11 @@ This pkg contains gps_node which publishes following NMEA protocol topics;
 
 - `/gpg/sentence`: A message representing a single NMEA0183 sentence.
 
+### Install dependencies:
+- pyserial: `pip3 install pyserial`
+- nmea_msgs: `sudo apt-get install ros-foxy-nmea-msgs`
 
-### Install:
+### Install pkg:
     
     sudo apt-get install ros-$ROS_DISTRO-nmea_msgs
 
